@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./Home.css" />
+    <link rel="stylesheet" href="./NavBar.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <nav>
+    <input type="checkbox" id="check" />
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="../Layouts/Home.html">Shop.Co</a></label>
+    <div class="right-menu" style="display: flex">
+      <div class="cart">
+        <a class="fas fa-shopping-cart cart" href="../Cart/Cart.html"> </a>
+      </div>
+      <div class="ad">
+        <div class="profile">
+          <i class="fas fa-user-circle"></i>
+
+          <div class="dropdown">
+            <a href="../Login/Login.html">Login</a>
+            <a href="../SignUp/SignUp.html">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Feedback</a></li>
+    </ul>
+  </nav>
+  <body>
+    <section style="width: 100%">
+      <div class="home-image">
+        <div class="overlay"></div>
+        <img src="../assets/img/shopping.jpg" alt="Home Image" />
+        <div class="image-text">
+          <h1>Welcome to your store!</h1>
+        </div>
+      </div>
+    </section>
+
+    <section style="display: flex; justify-content: center; margin: 25px">
+      <h1 style="font-size: 40px">New Arrivals</h1>
+    </section>
+    <section
+      style="
+        margin: 25px;
+        display: flex;
+        justify-content: center;
+        border-bottom: solid black 2px;
+        width: 90%;
+        padding: 5px;
+      "
+    ></section>
+    <section>
+      <div
+        id="itemContainer"
+        style="display: flex; flex-wrap: wrap; justify-content: center"
+      ></div>
+
+      <script>
+        const itemsData = [
+          {
+            imageSrc: "../assets/img/item1.jpeg",
+            heading: "Iphone 15 Pro Max",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore quae quaerat eaque.",
+            rating: 5,
+            price: 1600,
+          },
+          {
+            imageSrc: "../assets/img/item1.jpeg",
+            heading: "Iphone 14 Pro Max",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore quae quaerat eaque.",
+            rating: 4,
+            price: 1100,
+          },
+          {
+            imageSrc: "../assets/img/item1.jpeg",
+            heading: "Iphone 13 Pro Max",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore quae quaerat eaque.",
+            rating: 3,
+            price: 900,
+          },
+          {
+            imageSrc: "../assets/img/item1.jpeg",
+            heading: "Iphone 12 Pro Max",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore quae quaerat eaque.",
+            rating: 3,
+            price: 600,
+          },
+          {
+            imageSrc: "../assets/img/item1.jpeg",
+            heading: "Iphone 11 Pro Max",
+            description:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit labore quae quaerat eaque.",
+            rating: 2.5,
+            price: 400,
+          },
+        ];
+
+        function createItemCard(item) {
+          const itemCard = document.createElement("div");
+          itemCard.classList.add("item-container");
+
+          itemCard.innerHTML = `
+        <div class="item-top">
+          <div class="main-item">
+            <img src="${item.imageSrc}" alt="" />
+          </div>
+        </div>
+        <h2 class="item-heading">${item.heading}</h2>
+        <p class="item-description">${item.description}</p>
+        <ul class="rating">
+          ${getStaticStarIcons(item.rating)}
+        </ul>
+        <p class="item-price"><sup>$</sup>${item.price}.00/-</p>
+        <button class="item-view-btn">View Now</button>
+      `;
+
+          return itemCard;
+        }
+        function getStaticStarIcons(rating) {
+          const fullStars = Math.floor(rating);
+          const halfStar = rating % 1 !== 0;
+          let starIcons = "";
+
+          for (let i = 0; i < fullStars; i++) {
+            starIcons += '<i class="fa-solid fa-star"></i>';
+          }
+
+          if (halfStar) {
+            starIcons += '<i class="fa-solid fa-star-half-stroke"></i>';
+          }
+
+          return starIcons;
+        }
+
+        function populateItems() {
+          const container = document.getElementById("itemContainer");
+          container.innerHTML = "";
+
+          itemsData.forEach((item) => {
+            const itemCard = createItemCard(item);
+            container.appendChild(itemCard);
+          });
+        }
+
+        populateItems();
+      </script>
+      <section class="view-all" style="display: flex; justify-content: center">
+        <a style="margin: 40px" href="../AllProducts/AllProducts.html">View All</a>
+      </section>
+    </section>
+  </body>
+</html>

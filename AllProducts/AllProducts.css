@@ -1,0 +1,107 @@
+.head-title h1 {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+.border {
+  border: 1px solid black;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Ubuntu&display=swap");
+
+body {
+  font-family: montserrat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.view-all a {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 9rem;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+}
+.view-all a:hover {
+  background-color: #ffa500;
+  color: white;
+  cursor: pointer;
+}
+.item-container {
+  background-color: #fff;
+  width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-item img {
+  width: 100%;
+}
+
+.item-heading {
+  text-transform: capitalize;
+}
+
+.item-description {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.item-price {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.item-price sup {
+  color: green;
+}
+
+.rating i {
+  color: orange;
+  margin-bottom: 1rem;
+}
+
+.item-view-btn {
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: #fff;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 200;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.item-view-btn:hover {
+  color: #fff;
+  background-color: #ffa500;
+}

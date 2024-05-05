@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Ubuntu&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: montserrat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.view-all a {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 9rem;
+  border: none;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+}
+.view-all a:hover {
+  background-color: #ffa500;
+  color: white;
+  cursor: pointer;
+  
+
+}
+.item-container {
+  background-color: #fff;
+  width: 20rem;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-item img {
+  width: 100%;
+}
+
+.item-heading {
+  text-transform: capitalize;
+}
+
+.item-description {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+.item-price {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.item-price sup {
+  color: green;
+}
+
+.rating i {
+  color: orange;
+  margin-bottom: 1rem;
+}
+
+.item-view-btn {
+  border: none;
+  background-color: transparent;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: #fff;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 200;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.item-view-btn:hover {
+  color: #fff;
+  background-color: #ffa500;
+}
+.home-image {
+  position: relative;
+}
+
+.home-image img {
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.image-text h1 {
+  font-size: 5rem;
+  margin: 0;
+}
+@media (max-width: 858px) {
+  .home-image img {
+    width: 100%;
+    height: 100%;
+  }
+  .image-text h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  iframe {
+    height: 100%;
+  }
+}
